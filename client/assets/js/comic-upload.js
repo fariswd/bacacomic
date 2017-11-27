@@ -26,13 +26,13 @@ Vue.component('comic-upload', {
         <div class="form-group">
           <label for="exampleInputFile">File input</label>
           <input class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" type="file" @change="onFileChange">
-          <small id="fileHelp" class="form-text text-muted">  maximum file size: 10MB</small>
+          <small id="fileHelp" class="form-text text-muted">  maximum file size: 5MB</small>
         </div>
         <div v-if="images">
             <span @click="removeImage"><img v-for="(img, index) in imageurl" :src="img" /></span>
           <!-- <button class="btn btn-primary" @click="removeImage(index)">Remove image</button> -->
         </div>
-        <button v-on:click.submit.prevent="postform" type="submit" value="Submit" class="btn btn-primary">Submit</button>
+        <button disabled v-on:click.submit.prevent="postform" type="submit" value="Submit" class="btn btn-primary">Submit</button>
       </fieldset>
     </form>
   </div>  
@@ -81,7 +81,7 @@ Vue.component('comic-upload', {
         formData.append('images[]', this.images[i]);
       }
 
-      axios.post('http://api.comic.ga/upload', formData)
+      axios.post('http://vps.masfaris.com:3002/upload', formData)
       .then((response) => {
         console.log(response);
         alert("upload success");

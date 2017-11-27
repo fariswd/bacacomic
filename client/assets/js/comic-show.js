@@ -44,13 +44,13 @@ Vue.component('comic-show', {
   methods: {
     getcomic: function () {
       var idcomic = localStorage.getItem("idcomic");
-      axios.get('http://api.comic.ga/'+idcomic)
+      axios.get('http://vps.masfaris.com:3002/'+idcomic)
       .then(response => {
         this.id = response.data._id
         this.author = response.data.author
         this.title = response.data.title
         this.chapter = response.data.chapter
-        this.images = response.data.images
+        this.images = response.data.images.sort();
         
         let link = this.images[this.pos]
         this.$emit('download-link', {

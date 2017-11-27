@@ -18,7 +18,7 @@ new Vue({
     },
 
     readDB: function () {
-      axios.get('http://api.comic.ga/')
+      axios.get('http://vps.masfaris.com:3002/')
         .then((response) => {
           this.comics = response.data
           console.log(this.comics);
