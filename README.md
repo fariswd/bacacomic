@@ -1,6 +1,6 @@
 # bacacomic
 Upload dan share comic favoritemu  
-akses disini http://baca.comic.ga  
+akses disini http://baca.comic.ga || migrated http://comic.masfaris.com
 
 # API routing
 | Route | HTTP | Desc |
